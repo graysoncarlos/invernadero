@@ -1,0 +1,105 @@
+/* Contenedor principal del logo CSS v2 */
+.logo-invernadero-css-v2 {
+    width: 100px;
+    height: 90px;
+    position: relative;
+    margin: 50px auto 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Estructura del Invernadero V2 --- */
+.invernadero-frame {
+    position: absolute;
+    width: 90px;
+    height: 70px;
+    border: 3px solid #388E3C; /* Verde oscuro para el marco */
+    box-sizing: border-box;
+    z-index: 1;
+    border-radius: 4px; /* Un poco de redondeo */
+}
+
+.techo-v2 {
+    width: 0;
+    height: 0;
+    border-left: 48px solid transparent; /* Ancho de medio techo */
+    border-right: 48px solid transparent; /* Ancho de medio techo */
+    border-bottom: 30px solid #388E3C; /* Altura del techo */
+    position: absolute;
+    top: -30px; /* Posiciona el techo encima de la pared */
+    left: -3px; /* Ajuste para que se alinee */
+    z-index: 2;
+}
+
+.linea-vertical-central, .linea-horizontal-central {
+    background-color: #388E3C; /* Color del marco */
+    position: absolute;
+    z-index: 2;
+}
+
+.linea-vertical-central {
+    width: 3px;
+    height: 70px; /* Altura de la pared */
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+
+.linea-horizontal-central {
+    width: 90px; /* Ancho de la pared */
+    height: 3px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+/* --- Elemento de Planta V2 --- */
+.planta-v2 {
+    position: absolute;
+    bottom: 5px; /* Ajusta la posición vertical */
+    z-index: 3; /* Para que esté encima del marco */
+}
+
+.tallo-v2 {
+    width: 6px;
+    height: 40px;
+    background-color: #4CAF50; /* Verde fresco para el tallo */
+    margin: 0 auto;
+    border-radius: 3px;
+}
+
+.hoja-v2 {
+    width: 20px;
+    height: 12px;
+    background-color: #4CAF50; /* Verde fresco para las hojas */
+    border-radius: 0 50% 0 50%; /* Forma de hoja */
+    position: absolute;
+}
+
+/* Posición de las hojas */
+.hoja-izq-v2 {
+    top: -10px;
+    left: -15px;
+    transform: rotate(-30deg);
+}
+.hoja-der-v2 {
+    top: -10px;
+    left: 10px;
+    transform: rotate(30deg);
+}
+
+/* Nombre del Negocio (Mismo estilo que el anterior, para consistencia) */
+.nombre-negocio-css-v2 {
+    text-align: center;
+    color: #388E3C;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-top: 15px;
+    font-size: 1.8em;
+}
+
+html{
+    scroll-behavior: smooth;
+}

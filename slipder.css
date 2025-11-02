@@ -1,0 +1,418 @@
+
+
+.slider-contenedor {
+    /* Define el área visible del slider */
+    width: 100%;
+    height: 400px;
+    overflow: hidden; /* ¡Clave! Oculta todas las imágenes excepto la actual */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.slider-pista {
+    /* La pista de imágenes se debe estirar al 500% (5 imágenes x 100% cada una) */
+    width: 500%; 
+    height: 100%;
+    display: flex; /* Coloca las imágenes una al lado de la otra */
+    
+    /* Aplica la animación */
+    animation: slide-automático 15s infinite linear; 
+    /* Duración total: 5 imágenes * 5 segundos/imagen = 25 segundos */
+    /* 'infinite': se repite sin parar. 'linear': velocidad constante. */
+}
+
+
+
+.slider-pista img {
+    /* Cada imagen ocupa 1/5 del ancho total de la pista (500% / 5 = 100%) */
+    width: 500%; 
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+}
+
+/* ------------------------------------- */
+/* Definición de la Animación (@keyframes) */
+/* ------------------------------------- */
+
+@keyframes slide-automático {
+    /* 20% = 100% / 5 imágenes */
+    
+    /* 0% a 15% (Imagen 1 visible y estable) */
+    0%, 15% { transform: translateX(0); }
+    
+    /* 15% a 35% (Transición de Imagen 1 a 2 y estable) */
+    20%, 35% { transform: translateX(-20%); } /* Se mueve 100% a la izquierda (muestra img 2) */
+    
+    /* 40% a 55% (Transición de Imagen 2 a 3 y estable) */
+    40%, 55% { transform: translateX(-40%); } /* Se mueve 200% a la izquierda (muestra img 3) */
+    
+    /* 60% a 75% (Transición de Imagen 3 a 4 y estable) */
+    60%, 75% { transform: translateX(-60%); } /* Se mueve 300% a la izquierda (muestra img 4) */
+    
+    /* 80% a 95% (Transición de Imagen 4 a 5 y estable) */
+    80%, 95% { transform: translateX(-80%); } /* Se mueve 400% a la izquierda (muestra img 5) */
+    
+    /* 100% (Vuelve rápidamente a Imagen 1 para el bucle) */
+    100% { transform: translateX(0); } 
+}
+/* Estilos Generales */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    background-color: #f0fff0; /* Blanco verdoso suave */
+    color: #2e4a2e; /* Verde oscuro para el texto */
+    line-height: 1.5;
+}
+
+/* Sección Hero (Temática Invernadero) */
+.hero-invernadero {
+    background: linear-gradient(135deg, #388e3c, #689f38); /* Degradado de verdes */
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.hero-invernadero h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+/* ------------------------------------- */
+/* Sección del Video Animado */
+/* ------------------------------------- */
+
+.video-section-invernadero {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.video-wrapper-invernadero {
+    position: relative;
+    max-width: 900px;
+    width: 95%; 
+    background-color: #ffffff;
+    border: 5px solid #a5d6a7; /* Borde suave */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    
+    /* --- APLICACIÓN DE LA ANIMACIÓN DE ENTRADA --- */
+    animation: fadeInScale 1.5s ease-out forwards; 
+    opacity: 0; 
+    transform: scale(0.9); /* Empieza ligeramente reducido */
+}
+
+.animated-video-invernadero {
+    width: 100%;
+    height: auto;
+    display: block; 
+}
+
+.video-caption-invernadero {
+    padding: 10px 20px;
+    background-color: #558b2f; /* Verde oliva oscuro */
+    color: white;
+    text-align: center;
+    font-size: 1em;
+}
+
+/* ------------------------------------- */
+/* Definición de la Animación (@keyframes) */
+/* ------------------------------------- */
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9); /* De un tamaño más pequeño... */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* ...a su tamaño normal */
+    }
+}
+
+/* Sección de Información */
+.info-section-invernadero {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.info-section-invernadero h2 {
+    font-size: 1.8em;
+    color: #43a047; /* Verde vivo */
+    border-bottom: 2px solid #a5d6a7;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #e8f5e9; /* Fondo muy claro */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ------------------- */
+/* Encabezado con Degradado Verde-Azul */
+/* ------------------- */
+.header-invernadero {
+    padding: 50px 20px;
+    text-align: center;
+    /* Degradado Verde oscuro (#006400) a Azul profundo (#00008b) */
+    background: linear-gradient(to right, #006400, #00008b); 
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-invernadero h1 {
+    margin-top: 0;
+    font-size: 2.8em;
+    font-weight: 700;
+}
+
+.header-invernadero p {
+    font-size: 1.3em;
+    opacity: 0.9;
+}
+
+/* ------------------- */
+/* Visión y Misión */
+/* ------------------- */
+.vm-section {
+    display: flex;
+    gap: 30px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.vm-card {
+    flex: 1;
+    min-width: 300px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.vm-card:hover {
+    transform: translateY(-5px); /* Animación de elevación al pasar el ratón */
+}
+
+.vm-card h2 {
+    font-size: 1.8em;
+    margin-top: 0;
+    border-bottom: 2px solid;
+    padding-bottom: 10px;
+}
+
+.vision {
+    background-color: #f1f8e9; /* Verde muy claro */
+    border-left: 5px solid #33691e;
+}
+
+.mision {
+    background-color: #e3f2fd; /* Azul muy claro */
+    border-left: 5px solid #0d47a1;
+}
+
+/* ------------------- */
+/* Recomendaciones */
+/* ------------------- */
+.recomendaciones-section h2 {
+    text-align: center;
+    color: #1b5e20;
+    font-size: 2.2em;
+    margin: 50px 0 30px;
+}
+
+.recomendacion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding-bottom: 40px;
+}
+
+.reco-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #c8e6c9;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.reco-item:hover {
+    background-color: #e0f2f1; /* Cambio de color sutil al pasar el ratón */
+    transform: scale(1.02);
+}
+
+.reco-item h3 {
+    color: #388e3c;
+    margin-top: 0;
+    font-size: 1.4em;
+}
+
+.reco-item .summary {
+    font-weight: bold;
+    color: #1b5e20;
+    margin-bottom: 5px;
+}
+
+.reco-item .detail {
+    font-size: 0.95em;
+    color: #555;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+    margin: 40px 0;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .vm-section {
+        flex-direction: column;
+    }
+
+    .vm-card {
+        min-width: 100%;
+    }
+    
+    .header-invernadero h1 {
+        font-size: 2em;
+    }
+}
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: 'Verdana', sans-serif;
+    background-color: #f0fdf4; /* Fondo muy claro */
+    color: #333;
+}
+
+/* ------------------------------------- */
+/* Sección Principal y Títulos */
+/* ------------------------------------- */
+.social-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.social-section h1 {
+    font-size: 2.5em;
+    color: #2e7d32; /* Verde oscuro */
+    margin-bottom: 10px;
+}
+
+.social-section p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* ------------------------------------- */
+/* Diseño en Mosaico (Grid) */
+/* ------------------------------------- */
+.social-grid {
+    display: grid;
+    /* Crea 2 columnas en pantallas grandes, auto-ajustables en pequeñas */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white; /* Texto blanco en las tarjetas */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    
+    /* Propiedades de Animación */
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+}
+
+/* Animación al pasar el ratón (Efecto de elevación y escala) */
+.social-card:hover {
+    transform: translateY(-8px) scale(1.03); /* Se levanta y se agranda ligeramente */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.social-card i {
+    font-size: 3em;
+    margin-bottom: 15px;
+    /* Sombra de texto para hacer los iconos más vivos */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
+}
+
+.social-card h3 {
+    margin: 5px 0;
+    font-size: 1.5em;
+}
+
+.social-card p {
+    margin: 0;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* ------------------------------------- */
+/* Degradado Verde y Azul (por tarjeta) */
+/* ------------------------------------- */
+
+/* Degradado base (Verde oscuro a Azul fuerte) */
+.social-card {
+    background: linear-gradient(135deg, #47d847, #6abedf); 
+}
+
+/* Degradados específicos de ejemplo (Puedes personalizar estos) */
+
+.instagram-bg {
+    background: linear-gradient(135deg, #1eca8e, #3f75c5); /* Verde esmeralda a Azul índigo */
+}
+
+.facebook-bg {
+    background: linear-gradient(135deg, #6ddf73, #3481d8); /* Verde bosque a Azul cobalto */
+}
+
+.pinterest-bg {
+    background: linear-gradient(135deg, #6bda71, #1976d2); /* Verde medio a Azul real */
+}
+
+.youtube-bg {
+    background: linear-gradient(135deg, #71dd75, #00bcd4); /* Verde pasto a Azul cian */
+}
+
+
+/* Responsividad: En pantallas muy pequeñas, una columna */
+@media (max-width: 650px) {
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+

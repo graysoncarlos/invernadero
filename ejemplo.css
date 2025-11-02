@@ -1,0 +1,122 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+    background-color: #e8f5e9; /* Fondo suave para simular luz */
+}
+
+/* Estilos de la barra superior */
+.invernadero-header {
+    background-color: #388e3c; /* Verde medio */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between; /* Título a la izquierda, menú a la derecha */
+    align-items: center;
+    position: relative;
+    color: white;
+}
+
+.invernadero-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/* ------------------------------------- */
+/* Estilos del Botón Hamburguesa */
+/* ------------------------------------- */
+
+#menu-toggle-invernadero {
+    display: none;
+}
+
+.menu-button-invernadero {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    z-index: 1000; 
+}
+
+.bar-invernadero {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+}
+
+/* Animación de "X" */
+#menu-toggle-invernadero:checked + .menu-button-invernadero .bar-invernadero:nth-child(1) {
+    transform: translateY(11px) rotate(135deg);
+}
+#menu-toggle-invernadero:checked + .menu-button-invernadero .bar-invernadero:nth-child(2) {
+    opacity: 0;
+}
+#menu-toggle-invernadero:checked + .menu-button-invernadero .bar-invernadero:nth-child(3) {
+    transform: translateY(-11px) rotate(-135deg);
+}
+
+
+/* ------------------------------------- */
+/* Estilos del Menú Desplegable (Animación) */
+/* ------------------------------------- */
+
+.menu-invernadero {
+    /* Posicionamiento */
+    position: absolute;
+    top: 100%; 
+    right: 0;
+    width: 200px;
+    
+    /* Degradado de color solicitado: verde oscuro a verde limón */
+    /* Códigos usados: #1b5e20 (verde bajo) a #ccff90 (verde limón) */
+    background: linear-gradient(to bottom, #1b5e20, #ccff90); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 0 10px;
+    
+    /* Configuración para animación de desplazamiento vertical (más suave) */
+    max-height: 0; /* Oculto inicialmente */
+    overflow: hidden; 
+    
+    /* Transición de entrada */
+    transition: max-height 0.4s ease-in-out; 
+    z-index: 999;
+}
+
+/* Estado ABIERTO del menú */
+#menu-toggle-invernadero:checked ~ .menu-invernadero {
+    max-height: 300px; /* Suficiente altura para mostrar todo el contenido */
+}
+
+/* ------------------------------------- */
+/* Estilos de la lista */
+/* ------------------------------------- */
+
+.menu-invernadero ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-invernadero li a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+.menu-invernadero li:last-child a {
+    border-bottom: none;
+}
+
+.menu-invernadero li a:hover {
+    background-color: rgba(0, 0, 0, 0.15); /* Efecto hover sobre el degradado */
+    color: #388e3c; /* Color de texto del header */
+}
+

@@ -1,0 +1,185 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* ------------------------------------- */
+/* Estilos de la Barra de Navegación */
+/* ------------------------------------- */
+
+.category-bar {
+    width: 100%;
+    /* Degradado de color solicitado: Verde oscuro (#006400) a Azul profundo (#00008b) */
+    background: linear-gradient(to right, #006400, #00008b); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.category-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Utiliza Flexbox para alinear elementos */
+    justify-content: space-around; /* Distribuye el espacio entre los elementos */
+    max-width: 1200px; /* Limita el ancho en pantallas grandes */
+    margin: 0 auto;
+}
+
+.category-list li {
+    flex-grow: 1; /* Permite que cada elemento crezca para ocupar el espacio disponible */
+    text-align: center;
+}
+
+.category-list a {
+    display: block; /* Hace que todo el área sea clickable */
+    padding: 15px 10px;
+    text-decoration: none;
+    color: #ffffff; /* Color de texto blanco para contraste */
+    font-weight: bold;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-right: 1px solid rgba(255, 255, 255, 0.1); /* Separador sutil */
+}
+
+/* Quitar el separador del último elemento */
+.category-list li:last-child a {
+    border-right: none;
+}
+
+/* Efecto Hover (sutileza y profundidad) */
+.category-list a:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Añade un velo blanco semi-transparente */
+    transform: translateY(-2px); /* Un pequeño levantamiento para el efecto 3D */
+}
+
+/* Adaptación para pantallas pequeñas (si el espacio es limitado) */
+@media (max-width: 600px) {
+    .category-list {
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
+    }
+
+    .category-list li {
+        width: 50%; /* Dos categorías por línea en móviles */
+        flex-grow: 0; 
+    }
+    
+    .category-list a {
+        border-right: none; /* Elimina el separador vertical para la vista de cuadrícula */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Añade separador horizontal */
+    }
+
+    /* Asegurar que las últimas filas no tengan borde inferior */
+    .category-list li:nth-last-child(-n+2) a {
+        border-bottom: none;
+    }
+}
+/* Estilos generales del pie de página */
+.main-footer {
+    background-color: #2c3e50; /* Color base oscuro (Azul Marino Profundo) */
+    color: #ecf0f1; /* Texto blanco grisáceo */
+    padding-top: 40px;
+    font-size: 0.9em;
+}
+
+/* Contenedor principal para organizar las secciones */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    
+    /* Configuración de Flexbox para las columnas */
+    display: flex;
+    flex-wrap: wrap; /* Permite que las secciones salten de línea en pantallas pequeñas */
+    justify-content: space-between;
+    gap: 30px; /* Espacio entre las secciones */
+}
+
+.footer-section {
+    /* Las secciones ocuparán espacio de manera flexible */
+    flex-basis: 250px; 
+    flex-grow: 1;
+}
+
+.footer-section h3 {
+    color: #3498db; /* Color de acento azul */
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    display: inline-block; /* Ajusta el borde inferior al ancho del texto */
+}
+
+/* Estilos de las listas (Enlaces y Contacto) */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #ffffff; /* Texto blanco al pasar el ratón */
+}
+
+.footer-section i {
+    margin-right: 8px;
+    width: 15px; /* Para alinear bien los iconos */
+}
+
+/* Sección de Redes Sociales */
+.socials a {
+    display: inline-block;
+    color: #ecf0f1;
+    font-size: 1.5em;
+    margin-right: 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.socials a:hover {
+    transform: translateY(-3px); /* Pequeño salto */
+    color: #3498db; 
+}
+
+/* Parte inferior del pie de página (Copyright) */
+.footer-bottom {
+    background-color: #1f3140; /* Tono aún más oscuro */
+    text-align: center;
+    padding: 15px 20px;
+    margin-top: 20px;
+    color: #95a5a6;
+    font-size: 0.85em;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Apila las secciones verticalmente */
+        text-align: center;
+    }
+    
+    .footer-section {
+        margin-bottom: 30px;
+    }
+
+    .footer-section h3 {
+        /* Centrar los títulos en móvil */
+        margin: 0 auto 20px; 
+        border-bottom: 2px solid #3498db;
+        display: block;
+        width: fit-content;
+    }
+    
+    .socials {
+        margin-top: 15px;
+    }
+}
